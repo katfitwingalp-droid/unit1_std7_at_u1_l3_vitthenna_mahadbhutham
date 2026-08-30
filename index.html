@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ml" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+<title>വിത്തെന്ന മഹാദ്ഭുതം - STD 7 MALAYALAM UNIT 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1B5E20;
+  --primary-light: #388E3C;
+  --accent: #E65100;
+  --gold: #F57F17;
+  --blue: #0277BD;
+  --purple: #6A1B9A;
+  --teal: #00796B;
+  --bg-gradient: linear-gradient(135deg, #E8F5E9 0%, #FFFDE7 45%, #E0F2F1 100%);
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --radius: 18px;
+}
+* { box-sizing: border-box; user-select: none; -webkit-user-select: none; margin: 0; padding: 0; }
+body {
+  background: var(--bg-gradient);
+  min-height: 100vh;
+  color: #212121;
+  font-family: 'Anek Malayalam', 'Outfit', sans-serif;
+  direction: ltr;
+  text-align: left;
+}
+.en { font-family: 'Outfit', sans-serif; }
+.ml { font-family: 'Anek Malayalam', sans-serif; }
+#app { max-width: 1080px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; padding: 16px; }
+
+header {
+  background: var(--card-bg);
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+  border: 2px solid #C8E6C9;
+}
+.logo-area { display: flex; align-items: center; gap: 14px; cursor: pointer; }
+.logo-icon { font-size: 2.2rem; }
+.logo-title { font-size: 1.35rem; color: var(--primary); font-weight: 800; line-height: 1.2; }
+.logo-sub { font-size: 0.9rem; color: var(--blue); font-weight: 700; }
+.tag-badge { font-size: 0.78rem; background: #FFD54F; color: #37474F; padding: 3px 10px; border-radius: 12px; font-weight: 800; display: inline-block; margin-top: 3px; }
+
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #FFFDE7;
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 2px solid #FBC02D;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.controls { display: flex; gap: 8px; }
+.icon-btn {
+  background: #FFF;
+  border: 2px solid #CFD8DC;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+.icon-btn:hover { transform: scale(1.06); border-color: var(--primary-light); }
+
+.progress-container { width: 100%; background: rgba(255,255,255,0.8); height: 10px; border-radius: 10px; overflow: hidden; margin-bottom: 16px; border: 1px solid #C8E6C9; }
+.progress-bar { height: 100%; width: 5%; background: linear-gradient(90deg, #4CAF50, #8BC34A); transition: width 0.4s ease; }
+
+.screen { display: none; flex-direction: column; align-items: center; width: 100%; flex: 1; animation: fadeIn 0.3s ease-in-out; }
+.screen.active { display: flex; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.home-card {
+  background: var(--card-bg);
+  border-radius: 26px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 860px;
+  margin: auto;
+  border: 4px solid #FFF;
+}
+.main-title { color: var(--primary); font-size: 1.95rem; font-weight: 800; margin-bottom: 6px; }
+.sub-title { color: var(--accent); font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+.author-tag { background: #E8F5E9; color: #1B5E20; display: inline-block; padding: 6px 20px; border-radius: 20px; font-size: 0.95rem; margin-bottom: 24px; font-weight: 700; border: 1px solid #A5D6A7; }
+
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; width: 100%; }
+.btn-menu {
+  padding: 16px 16px;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 5px 0 rgba(0,0,0,0.18);
+  transition: all 0.2s;
+}
+.btn-menu:hover { transform: translateY(-2px); box-shadow: 0 7px 0 rgba(0,0,0,0.2); }
+.btn-menu:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(0,0,0,0.2); }
+
+.b1 { background: linear-gradient(135deg, #1B5E20, #2E7D32); }
+.b2 { background: linear-gradient(135deg, #0288D1, #01579B); }
+.b3 { background: linear-gradient(135deg, #E65100, #BF360C); }
+.b4 { background: linear-gradient(135deg, #6A1B9A, #4A148C); }
+.b5 { background: linear-gradient(135deg, #00897B, #004D40); }
+.b6 { background: linear-gradient(135deg, #F57F17, #E65100); }
+.b7 { background: linear-gradient(135deg, #C2185B, #880E4F); }
+.b8 { background: linear-gradient(135deg, #455A64, #263238); }
+.b9 { background: linear-gradient(135deg, #512DA8, #311B92); }
+.b10{ background: linear-gradient(135deg, #D32F2F, #B71C1C); }
+
+.section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  background: white;
+  padding: 12px 22px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  gap: 10px;
+  border-left: 6px solid var(--primary);
+}
+.section-title { font-size: 1.35rem; color: var(--primary); font-weight: 800; display: flex; align-items: center; gap: 10px; }
+.back-btn { background: #37474F; color: white; border: none; padding: 8px 22px; border-radius: 20px; font-weight: 700; cursor: pointer; }
+.back-btn:hover { background: #212121; }
+
+.content-box {
+  background: var(--card-bg);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto 20px;
+  border: 3px solid #FFF;
+}
+
+.story-para {
+  background: #FAFAFA;
+  border-left: 6px solid var(--primary-light);
+  padding: 18px 20px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.story-para p { font-size: 1.22rem; line-height: 2; flex: 1; font-weight: 500; }
+.mini-play {
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Vocabulary Grid */
+.vocab-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; width: 100%; }
+.vocab-card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  border: 2px solid #E0E0E0;
+  transition: all 0.25s;
+}
+.vocab-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+.vocab-word { font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; border-bottom: 2px dashed #C8E6C9; padding-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+.vocab-row { font-size: 1.05rem; line-height: 1.7; margin-bottom: 6px; color: #424242; }
+.vocab-row b { color: #1B5E20; }
+
+.activity-block {
+  background: #FFFDE7;
+  border: 2px solid #FFF59D;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+.activity-heading { color: #E65100; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; border-bottom: 2px solid #FFE082; padding-bottom: 6px; }
+.activity-desc { font-size: 1.12rem; line-height: 1.8; margin-bottom: 14px; font-weight: 500; }
+.reveal-model-btn {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 9px 24px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.model-answer-box {
+  background: #F3E5F5;
+  border: 2px dashed #BA68C8;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 14px;
+  font-size: 1.15rem;
+  line-height: 2;
+  display: none;
+}
+
+/* Games */
+.game-box {
+  background: white;
+  border-radius: 25px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-header {
+  font-size: 1.25rem;
+  color: #1B5E20;
+  background: #E8F5E9;
+  padding: 10px 28px;
+  border-radius: 25px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.game-q-card {
+  background: #F9FBE7;
+  border: 2px solid #DCE775;
+  border-radius: 18px;
+  padding: 20px;
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 22px;
+  line-height: 1.8;
+}
+.options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; }
+.option-btn {
+  background: #FFF;
+  border: 3px solid #81C784;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #1B5E20;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #66BB6A;
+  text-align: center;
+  transition: all 0.2s;
+  line-height: 1.5;
+}
+.option-btn:hover { background: #E8F5E9; }
+.option-btn.correct { background: #C8E6C9 !important; border-color: #4CAF50 !important; color: #1B5E20 !important; box-shadow: 0 4px 0 #388E3C !important; }
+.option-btn.wrong { background: #FFCDD2 !important; border-color: #F44336 !important; color: #B71C1C !important; box-shadow: 0 4px 0 #D32F2F !important; }
+
+/* Match Columns */
+.match-container { display: flex; justify-content: space-between; width: 100%; gap: 18px; margin-bottom: 18px; }
+.match-column { display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.match-item {
+  background: white;
+  border: 3px solid #CFD8DC;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+}
+.match-item:hover { border-color: var(--blue); background: #E1F5FE; }
+.match-item.selected { border-color: #FFB300; background: #FFF8E1; }
+.match-item.matched { border-color: #4CAF50; background: #E8F5E9; opacity: 0.6; pointer-events: none; }
+
+/* Question Paper & Print */
+.qp-card { background: white; border: 2px solid #CFD8DC; border-radius: 18px; padding: 26px; margin-bottom: 20px; }
+.qp-title { text-align: center; color: var(--primary); font-size: 1.55rem; font-weight: 800; margin-bottom: 4px; }
+.qp-meta { text-align: center; font-size: 0.95rem; color: #616161; font-weight: 600; margin-bottom: 20px; border-bottom: 2px dashed #B0BEC5; padding-bottom: 12px; }
+.qp-section-title { font-weight: 800; color: #C2185B; font-size: 1.2rem; margin: 18px 0 12px; background: #FCE4EC; padding: 8px 16px; border-radius: 10px; }
+.qp-q-box { margin-bottom: 14px; padding: 12px 16px; background: #F1F8E9; border-left: 4px solid #4CAF50; border-radius: 8px; font-size: 1.15rem; line-height: 1.8; }
+.qp-action-bar { display: flex; gap: 14px; justify-content: center; margin-bottom: 22px; flex-wrap: wrap; }
+.print-btn {
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  color: white;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Quiz Container */
+.quiz-q { background: white; border-radius: 16px; padding: 20px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 6px solid var(--primary); }
+.quiz-q .qtext { font-size: 1.25rem; font-weight: 700; margin-bottom: 14px; line-height: 1.7; }
+.quiz-opts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.quiz-opt { background: #F5F5F5; border: 2px solid #E0E0E0; border-radius: 12px; padding: 14px; cursor: pointer; text-align: center; font-size: 1.1rem; font-weight: 600; }
+.quiz-opt.picked { border-color: var(--primary); background: #E8F5E9; }
+.quiz-opt.correct-ans { border-color: #4CAF50; background: #C8E6C9; color: #1B5E20; }
+.quiz-opt.wrong-ans { border-color: #F44336; background: #FFCDD2; color: #B71C1C; }
+.submit-quiz-btn { background: linear-gradient(135deg, #1B5E20, #2E7D32); color: white; border: none; padding: 14px 44px; border-radius: 25px; font-size: 1.18rem; font-weight: 700; cursor: pointer; margin-top: 10px; }
+.quiz-score-box { background: #FFF9C4; border: 2px solid #FBC02D; border-radius: 18px; padding: 18px; text-align: center; font-size: 1.35rem; font-weight: 800; margin-bottom: 20px; }
+
+table.custom-table { width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; }
+.custom-table th { background: var(--teal); color: white; padding: 14px; font-size: 1.1rem; text-align: left; }
+.custom-table td { padding: 12px 14px; border-bottom: 1px solid #EEEEEE; font-size: 1.12rem; }
+.custom-table tr:nth-child(even) { background: #FAFAFA; }
+
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); z-index: 1000; display: none; justify-content: center; align-items: center; padding: 20px; }
+.modal-overlay.active { display: flex; }
+.reward-card { background: white; border-radius: 28px; padding: 32px; text-align: center; max-width: 480px; width: 100%; border: 5px solid #FFD54F; }
+.reward-icon { font-size: 4.2rem; margin-bottom: 10px; }
+.reward-title { color: #2E7D32; font-size: 1.85rem; font-weight: 800; margin-bottom: 6px; }
+
+@media (max-width: 700px) {
+  .main-title { font-size: 1.5rem; }
+  .options-grid { grid-template-columns: 1fr; }
+  .quiz-opts { grid-template-columns: 1fr; }
+  .match-container { flex-direction: column; }
+  .story-para p { font-size: 1.1rem; }
+}
+
+@media print {
+  body { background: white; color: black; }
+  #app > header, .progress-container, .back-btn, .qp-action-bar, .reveal-model-btn, .icon-btn { display: none !important; }
+  .screen { display: none !important; }
+  #modelQPScreen { display: block !important; }
+  .content-box, .qp-card { box-shadow: none; border: 1px solid #000; width: 100%; max-width: 100%; padding: 10px; }
+  .model-answer-box { display: block !important; border: 1px solid #555; }
+}
+
+/* Prevent text overflow – keep all letters inside layout */
+html, body { overflow-x: hidden; max-width: 100%; }
+#app, .content-box, .home-card, .story-para, .story-para p, .vocab-card, .activity-block,
+.game-q-card, .quiz-q, .section-title, .main-title, .sub-title, .btn-menu, .option-btn,
+.vocab-word, .activity-desc, .qp-q-box {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  word-break: break-word;
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="logo-area" onclick="showScreen('homeScreen')">
+      <div class="logo-icon">🌱</div>
+      <div>
+        <h1 class="logo-title ml">വിത്തെന്ന മഹാദ്ഭുതം</h1>
+        <div class="logo-sub en">STD 7 · MALAYALAM · AT · UNIT 1 · LESSON 3</div>
+        <span class="tag-badge ml">അടിസ്ഥാനപാഠാവലി - ആത്മകഥാ പഠനം</span>
+      </div>
+    </div>
+    <div class="stats-bar en">
+      <div>⭐ <span id="valScore">0</span></div>
+      <div>❤️ <span id="valLives">3</span></div>
+      <div>🏆 <span id="valStars">0</span></div>
+    </div>
+    <div class="controls" style="display:flex;align-items:center;gap:6px;">
+      <button class="icon-btn" onclick="changeZoom(-0.1)" title="Zoom Out" style="font-weight:800;">−</button>
+      <span id="zoomLabel" style="font-size:0.85rem;font-weight:700;min-width:40px;text-align:center;">100%</span>
+      <button class="icon-btn" onclick="changeZoom(0.1)" title="Zoom In" style="font-weight:800;">+</button>
+
+      <button class="icon-btn" id="btnAudioToggle" onclick="toggleAudio()" title="Sound Toggle">🔊</button>
+      <button class="icon-btn" onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+      <button class="icon-btn" onclick="showScreen('homeScreen')" title="Home">🏠</button>
+    </div>
+  </header>
+
+  <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+
+  <!-- Home Screen -->
+  <div id="homeScreen" class="screen active">
+    <div class="home-card">
+      <h1 class="main-title ml">വിത്തെന്ന മഹാദ്ഭുതം</h1>
+      <h2 class="sub-title ml">പത്മശ്രീ ചെറുവയൽ രാമൻ · 'ആത്മകഥ'</h2>
+      <div class="author-tag ml">Prepared by: Smart Vidhya</div>
+      
+      <div class="menu-grid">
+        <button class="btn-menu b1" onclick="showScreen('readingScreen')">📖 Read Aloud & Listen</button>
+        <button class="btn-menu b2" onclick="showScreen('vocabMatrixScreen')">📚 കാർഷിക പദാവലി & സന്ധിവിചാരം</button>
+        <button class="btn-menu b6" onclick="showScreen('activitiesScreen')">📝 പാഠപുസ്തക പ്രവർത്തനങ്ങൾ & ചിന്തകൾ</button>
+        <button class="btn-menu b3" onclick="showScreen('gamesMenuScreen')">🎮 7-ാം ക്ലാസ് ലേണിംഗ് ഗെയിമുകൾ (6)</button>
+        <button class="btn-menu b4" onclick="showScreen('quizScreen')">❓ മൂല്യനിർണ്ണയ ക്വിസ് (12 ചോദ്യങ്ങൾ)</button>
+        <button class="btn-menu b10" onclick="showScreen('modelQPScreen')">📋 മാതൃകാ ചോദ്യപേപ്പർ (30 Marks)</button>
+        <button class="btn-menu b7" onclick="showScreen('discourseScreen')">✍️ പ്രസംഗം, അഭിമുഖം & വിത്തുമേള</button>
+        <button class="btn-menu b5" onclick="showScreen('authorScreen')">👤 പത്മശ്രീ ചെറുവയൽ രാമൻ</button>
+        <button class="btn-menu b9" onclick="showScreen('grammarScreen')">📚 വ്യാകരണം: പദച്ചേരുവകൾ</button>
+        <button class="btn-menu b8" onclick="showScreen('instructionsScreen')">ℹ️ അധ്യാപക സഹായി</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reading Screen -->
+  <div id="readingScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">📖 Read Aloud & Listen (പാഠവായന)</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box">
+      <div style="background:#E8F5E9; border:2px solid #81C784; border-radius:18px; padding:16px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div>
+          <h3 class="ml" style="color:var(--primary); font-size:1.15rem;">ചെറുവയൽ രാമന്റെ അനുഭവപാഠങ്ങൾ കേൾക്കാം</h3>
+          <p class="ml" style="font-size:0.95rem; color:#555;">പരമ്പരാഗത വിത്തുസംരക്ഷണത്തിന്റെ ശാസ്ത്രീയത തിരിച്ചറിയുക</p>
+        </div>
+        <button class="btn-menu b1 ml" style="padding:10px 24px; border-radius:25px;" onclick="readAllStory()">🔊 മുഴുവൻ പാഠം കേൾക്കുക</button>
+      </div>
+      <div id="storyContainer"></div>
+    </div>
+  </div>
+
+  <!-- Vocab Matrix -->
+  <div id="vocabMatrixScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">📚 കാർഷിക പദാവലി, ശാസ്ത്രീയ തത്ത്വങ്ങൾ & സന്ധി</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box">
+      <p class="ml" style="margin-bottom:18px; font-weight:600; color:#555;">ഏഴാം ക്ലാസിലെ കാർഷിക പാഠത്തിന് അനുയോജ്യമായ പദങ്ങളും സവിശേഷതകളും:</p>
+      <div class="vocab-cards-grid" id="vocabMatrixGrid"></div>
+    </div>
+  </div>
+
+  <!-- Activities Screen -->
+  <div id="activitiesScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">📝 പാഠപുസ്തക വിശകലനങ്ങൾ & ഉത്തരസൂചിക</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box" id="activitiesContainer"></div>
+  </div>
+
+  <!-- Games Menu Screen (Std 7) -->
+  <div id="gamesMenuScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">🎮 7-ാം ക്ലാസ് ലേണിംഗ് ഗെയിമുകൾ</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="menu-grid" style="max-width:760px; margin:20px auto;">
+      <button class="btn-menu b1" onclick="launchGame(1)">💎 വിത്തുവിജ്ഞാന കോശം (Agri-Vocab)</button>
+      <button class="btn-menu b2" onclick="launchGame(2)">🔗 പദച്ചേരുവകൾ & സന്ധി (Word Joining)</button>
+      <button class="btn-menu b3" onclick="launchGame(3)">🔄 കാർഷിക പഴമൊഴികൾ & പൊരുൾ</button>
+      <button class="btn-menu b4" onclick="launchGame(4)">🧩 വാക്യശുദ്ധീകരണവും അന്വയക്രമവും</button>
+      <button class="btn-menu b5" onclick="launchGame(5)">🎯 വിത്തുസംരക്ഷണ പ്രശ്നോത്തരി</button>
+      <button class="btn-menu b9" onclick="launchGame(6)">✨ ശാസ്ത്രീയ കൃഷിരീതികളും തത്ത്വങ്ങളും</button>
+    </div>
+  </div>
+
+  <!-- Game 1 -->
+  <div id="game1Screen" class="screen"><div class="game-box">
+    <div class="game-header ml">💎 വിത്തുവിജ്ഞാന കോശം (Agricultural Knowledge)</div>
+    <div class="game-q-card ml" id="g1QuestionCard">ചോദ്യം...</div>
+    <div class="options-grid" id="g1OptionsGrid"></div>
+  </div></div>
+
+  <!-- Game 2 -->
+  <div id="game2Screen" class="screen"><div class="game-box">
+    <div class="game-header ml">🔗 പദച്ചേരുവകൾ - പദങ്ങൾ ചേർത്തെഴുതുന്ന രീതി യോജിപ്പിക്കുക</div>
+    <div class="match-container">
+      <div class="match-column" id="g2ColA"></div>
+      <div class="match-column" id="g2ColB"></div>
+    </div>
+  </div></div>
+
+  <!-- Game 3 -->
+  <div id="game3Screen" class="screen"><div class="game-box">
+    <div class="game-header ml">🔄 കാർഷിക പഴമൊഴികൾ & പൊരുൾ</div>
+    <div class="game-q-card ml" id="g3QuestionCard">ചോദ്യം...</div>
+    <div class="options-grid" id="g3OptionsGrid"></div>
+  </div></div>
+
+  <!-- Game 4 -->
+  <div id="game4Screen" class="screen"><div class="game-box">
+    <div class="game-header ml">🧩 വാക്യശുദ്ധീകരണവും അന്വയക്രമവും</div>
+    <div class="game-q-card ml" id="g4QuestionCard">വാക്യം ശരിയായ ക്രമത്തിൽ കണ്ടെത്തുക</div>
+    <div class="options-grid" id="g4OptionsGrid" style="grid-template-columns:1fr;"></div>
+  </div></div>
+
+  <!-- Game 5 -->
+  <div id="game5Screen" class="screen"><div class="game-box">
+    <div class="game-header ml">🎯 വിത്തുസംരക്ഷണ പ്രശ്നോത്തരി</div>
+    <div class="game-q-card ml" id="g5QuestionCard">സന്ദർഭ ചോദ്യം...</div>
+    <div class="options-grid" id="g5OptionsGrid"></div>
+  </div></div>
+
+  <!-- Game 6 -->
+  <div id="game6Screen" class="screen"><div class="game-box">
+    <div class="game-header ml">✨ ശാസ്ത്രീയ കൃഷിരീതികളും കണക്കുകളും</div>
+    <div class="game-q-card ml" id="g6QuestionCard">പ്രയോഗം...</div>
+    <div class="options-grid" id="g6OptionsGrid"></div>
+  </div></div>
+
+  <!-- Quiz Screen -->
+  <div id="quizScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">❓ സമഗ്ര മൂല്യനിർണ്ണയ ക്വിസ് (12 Questions)</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box">
+      <div id="quizScoreBox" style="display:none;" class="quiz-score-box ml"></div>
+      <div id="quizContainer"></div>
+      <div style="text-align:center;"><button class="submit-quiz-btn ml" onclick="submitQuiz()">✅ ഉത്തരങ്ങൾ സമർപ്പിക്കാം (Submit)</button></div>
+    </div>
+  </div>
+
+  <!-- Model Question Paper Screen -->
+  <div id="modelQPScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">📋 മാതൃകാ പരീക്ഷാ ചോദ്യപേപ്പർ & Worksheet</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box">
+      <div class="qp-action-bar">
+        <button class="print-btn ml" onclick="printQuestionPaper()">🖨️ Print / Save as PDF</button>
+        <button class="print-btn ml" style="background:linear-gradient(135deg,#6A1B9A,#4A148C);" onclick="downloadTextQP()">📥 Download Worksheet (Text/Doc)</button>
+      </div>
+      <div id="modelQPContent" class="qp-card"></div>
+    </div>
+  </div>
+
+  <!-- Discourses Screen -->
+  <div id="discourseScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">✍️ പ്രസംഗം, അഭിമുഖ ചോദ്യാവലി & കുറിപ്പുകൾ</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box" id="discourseContainer"></div>
+  </div>
+
+  <!-- Grammar Screen -->
+  <div id="grammarScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">📚 വ്യാകരണം: പദച്ചേരുവകൾ (സന്ധികൾ)</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box" id="grammarContainer"></div>
+  </div>
+
+  <!-- Author Screen -->
+  <div id="authorScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">👤 പത്മശ്രീ ചെറുവയൽ രാമൻ - ജീവചരിത്രം</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box" id="authorContainer"></div>
+  </div>
+
+  <!-- Instructions Screen -->
+  <div id="instructionsScreen" class="screen">
+    <div class="section-header">
+      <div class="section-title ml">ℹ️ അധ്യാപക സഹായി</div>
+      <button class="back-btn en" onclick="showScreen('homeScreen')">Back</button>
+    </div>
+    <div class="content-box">
+      <div style="background:#F5F5F5; padding:22px; border-radius:16px; line-height:2; font-size:1.15rem;" class="ml">
+        <h3 style="color:var(--primary); margin-bottom:12px;">വിത്തെന്ന മഹാദ്ഭുതം - പഠന ലക്ഷ്യങ്ങൾ:</h3>
+        <ul style="padding-left:22px;">
+          <li>നാടൻ വിത്തുകളുടെ സംരക്ഷണവും ജൈവകൃഷിയുടെ പ്രാധാന്യവും തിരിച്ചറിയൽ.</li>
+          <li>കർഷകരുടെ പരമ്പരാഗത അറിവുകളും ശാസ്ത്രീയ കൃഷിരീതികളും തമ്മിലുള്ള പൊരുത്തം മനസ്സിലാക്കൽ.</li>
+          <li>കർഷകരുമായി അഭിമുഖം നടത്താനുള്ള ചോദ്യാവലി, പ്രസംഗ രൂപരേഖ എന്നിവ തയ്യാറാക്കൽ.</li>
+          <li>30 മാർക്കിന്റെ പരീക്ഷാ ചോദ്യപേപ്പർ പരിശീലനം.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="rewardModal">
+  <div class="reward-card">
+    <div class="reward-icon">🌱</div>
+    <h2 class="reward-title ml">അഭിനന്ദനങ്ങൾ!</h2>
+    <p class="ml" style="font-size:1.15rem; color:#555; margin-bottom:20px;">നിങ്ങൾ യൂണിറ്റിലെ എല്ലാ പാഠഭാഗങ്ങളും ഉന്നത നിലവാരത്തിൽ പൂർത്തിയാക്കി!</p>
+    <button class="btn-menu b1 ml" style="margin:0 auto;" onclick="closeRewardModal()">തുടരുക (Continue)</button>
+  </div>
+</div>
+
+<script>
+let state = {
+  score: 0, lives: 3, stars: 0,
+  audioEnabled: true,
+  activeGame: null, currentGameIndex: 0, gameQueue: [],
+  quizSubmitted: false
+};
+
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+}
+
+function playTone(freq, type, duration, delay=0) {
+  if (!state.audioEnabled) return;
+  initAudio();
+  setTimeout(() => {
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    } catch(e) {}
+  }, delay * 1000);
+}
+
+function playSound(type) {
+  if (!state.audioEnabled) return;
+  initAudio();
+  if (type === 'correct') {
+    playTone(523.25, 'sine', 0.2, 0);
+    playTone(659.25, 'sine', 0.2, 0.1);
+    playTone(783.99, 'sine', 0.3, 0.2);
+  } else if (type === 'wrong') {
+    playTone(280, 'sawtooth', 0.2, 0);
+    playTone(180, 'sawtooth', 0.3, 0.15);
+  } else if (type === 'click') {
+    playTone(480, 'triangle', 0.08, 0);
+  } else if (type === 'fanfare') {
+    [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => playTone(f, 'sine', 0.35, i * 0.12));
+  }
+}
+
+function speakMalayalam(text, onend) {
+  if (!state.audioEnabled) { if (onend) onend(); return; }
+  if (!('speechSynthesis' in window)) { if (onend) onend(); return; }
+  try {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(String(text || '').trim());
+    utterance.lang = 'ml-IN';
+    utterance.rate = 0.68;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    const voices = window.speechSynthesis.getVoices() || [];
+    let mlVoice = null;
+    for (const v of voices) {
+      const l = (v.lang || '').toLowerCase();
+      const n = (v.name || '').toLowerCase();
+      if (l.startsWith('ml') || n.includes('malayalam') || n.includes('sobhana') || n.includes('midhun')) {
+        mlVoice = v;
+        if (/neural|natural|google|microsoft|premium/.test(n)) break;
+      }
+    }
+    if (mlVoice) utterance.voice = mlVoice;
+    let finished = false;
+    const finish = () => { if (finished) return; finished = true; if (onend) onend(); };
+    utterance.onend = finish;
+    utterance.onerror = finish;
+    window.speechSynthesis.speak(utterance);
+  } catch(e) { if (onend) onend(); }
+}
+
+function toggleAudio() {
+  state.audioEnabled = !state.audioEnabled;
+  document.getElementById('btnAudioToggle').innerText = state.audioEnabled ? '🔊' : '🔇';
+  if (!state.audioEnabled && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
+function toggleFullscreen() {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(()=>{});
+  else if (document.exitFullscreen) document.exitFullscreen();
+}
+
+function updateStatsUI() {
+  document.getElementById('valScore').innerText = state.score;
+  document.getElementById('valLives').innerText = state.lives;
+  document.getElementById('valStars').innerText = state.stars;
+  document.getElementById('progressBar').style.width = Math.min(100, Math.max(5, state.score / 2.5)) + '%';
+}
+
+function showRewardModal() { playSound('fanfare'); document.getElementById('rewardModal').classList.add('active'); }
+function closeRewardModal() { document.getElementById('rewardModal').classList.remove('active'); showScreen('homeScreen'); }
+
+function revealModel(id, btn) {
+  const el = document.getElementById(id);
+  const isHidden = el.style.display !== 'block';
+  el.style.display = isHidden ? 'block' : 'none';
+  if (isHidden) {
+    state.score += 5; updateStatsUI(); playSound('correct');
+    if (btn) btn.innerText = '🙈 ഒളിപ്പിക്കുക (Hide)';
+  } else {
+    if (btn) btn.innerText = '💡 മാതൃകാ രൂപരേഖ കാണുക (Show)';
+  }
+}
+
+const STORY_PARAS = [
+  "വിത്തുശേഖരണത്തിന്റെ കാര്യത്തിൽ പലകാര്യങ്ങളും ശ്രദ്ധിക്കണം. എൺപതുശതമാനം മൂപ്പാവുമ്പോഴാണ് വിളവെടുക്കേണ്ടത്. എൺപതുശതമാനം മൂപ്പേ പാടുള്ളൂവെന്നുതന്നെ പറയാം. നൂറുശതമാനം പാടില്ല. കാരണം, നൂറുശതമാനം മൂത്തുപോയാൽ വിത്തിന്റെ ഗുണം കുറയും.",
+  "‘അധികം വിളഞ്ഞാൽ വിത്തിന് കൊള്ളില്ല’ എന്നൊരു പഴമൊഴി തന്നെയുണ്ട്. ഏത് കൃഷിയായാലും അതങ്ങനെയാണ്. പതിനാലുദിവസം വെയിലത്തും മഞ്ഞത്തുമിട്ട് നന്നായി കാറ്റും വെയിലും കൊള്ളിച്ച് ഉണക്കിയെടുക്കുകയാണ്. അങ്ങനെ ഉണക്കിയെടുത്ത് സൂക്ഷിക്കുന്നതാണ് നല്ല വിത്തുകളായി മാറുന്നത്.",
+  "വിത്തിനായി ധാന്യമണികളെടുക്കുന്ന രീതിക്കും പ്രാധാന്യമുണ്ട്. പയറിന്റെ വിത്താണ് എടുക്കുന്നതെങ്കിൽ പയർവള്ളിയുടെ അങ്ങേയറ്റവും ഇങ്ങേയറ്റവും ഉപേക്ഷിക്കുക. അതിന്റെ നടുക്കുള്ള മണികൾ മാത്രം തിരഞ്ഞെടുക്കുക. നെൽക്കതിരിന്റെ രണ്ടറ്റവും ഉപേക്ഷിച്ചശേഷം നടുക്കുനിന്നുള്ള മണികൾ എടുക്കണം.",
+  "ശേഖരിച്ച വിത്ത് ഉണക്കുന്നതിനും ചില ചിട്ടകളുണ്ട്. നെല്ലാണെങ്കിൽ വെയിലും മഞ്ഞും കൊള്ളിക്കുന്നു. ഇഞ്ചിയാണെങ്കിൽ പുകയത്തുവച്ച് ഉണക്കുന്നു. വിത്തിന്റെ സ്വാഭാവിക പ്രതിരോധശേഷി നിലനിർത്താൻ ഇത് സഹായിക്കുന്നു.",
+  "ഇങ്ങനെ ഉണക്കിയെടുക്കുന്ന വിത്തുകൾ മുള, ഈറ്റ ഒക്കെക്കൊണ്ട് ഉണ്ടാക്കിയ കൊമ്മ, കുട്ട എന്നിവയിലൊക്കെയായിരുന്നു പണ്ട് സൂക്ഷിച്ചിരുന്നത്. ഇതുകൂടാതെ കച്ചികൊണ്ട് ഉണ്ടാക്കിയെടുക്കുന്ന 'വിത്തുമുട' എന്നൊരു സാധനമുണ്ട്. അതിന്റെ ആകൃതി ഒരു പന്ത് അല്ലെങ്കിൽ ഭൂഗോളംപോലെയാണ്.",
+  "വയനാട്ടിൽ വിത്തുപാകുന്നത് രണ്ടുസമയത്താണ്. പൊടിഞാറെന്നും ചെളിഞാറെന്നും പറയും. മേടമാസത്തിൽ ആദ്യമഴ പെയ്തു കഴിയുമ്പോഴാണ് വിത്ത് പാകിത്തുടങ്ങുന്നത്. ആറുമാസം അല്ലെങ്കിൽ നൂറ്റിയെൺപതു ദിവസം മൂപ്പുള്ള വിത്താണെങ്കിൽ, നാൽപ്പത്തിരണ്ട് ദിവസത്തിനുള്ളിൽ ഞാറ് പറിച്ചുനടണം.",
+  "കർഷകൻ വിദ്യാഭ്യാസം നേടുകയും കണക്കുകൂട്ടാൻ പഠിക്കുകയും ചെയ്തതോടെ കൃഷിക്ക് പ്രകൃതിയുടെ സഞ്ചാരത്തിന് അനുസരിച്ചുള്ള ശാസ്ത്രീയ അടിത്തറ കൊണ്ടുവരാൻ സാധിച്ചു. അനുഭവങ്ങളുടെ അടിസ്ഥാനത്തിൽ സ്വയം രൂപപ്പെട്ടുവരുന്നതാണ് ഇതൊക്കെ.",
+  "വിളവെടുക്കുന്ന സമയമാകുമ്പോഴേക്കും എല്ലാ വിത്തിനങ്ങളുടെയും മൂപ്പ് ഏകദേശം തുല്യമായി നിൽക്കും. ആ കണക്കുനോക്കിയാണ് വിത്തു പാകുന്നതും ഞാറ് പറിച്ചുനടുന്നതുമെല്ലാം. ആ ഒരു ചാക്രികതയിലേക്ക് കൃഷിയെ കൊണ്ടുവന്നു."
+];
+
+const VOCAB_MATRIX = [
+  { word: 'വിത്തുമുട', meaning: 'കച്ചികൊണ്ട് പന്തിന്റെ ആകൃതിയിൽ മെടഞ്ഞുണ്ടാക്കുന്ന വിത്തുസൂക്ഷിപ്പ് പാത്രം', paryayam: 'വിത്തുപെട്ടി, വിത്തുക്കൂട്', vipareetham: 'പ്ലാസ്റ്റിക് ചാക്ക്', prayogam: 'പണ്ടുകാലത്ത് പരമ്പരാഗത നെൽവിത്തുകൾ വിത്തുമുടയിലാണ് സൂക്ഷിച്ചിരുന്നത്.' },
+  { word: 'കൊമ്മ', meaning: 'മുളയോ ഈറ്റയോ കൊണ്ട് വിത്തു സൂക്ഷിക്കാൻ നിർമ്മിക്കുന്ന വലിയ കുട്ട', paryayam: 'പത്തായം, കളപ്പുരക്കുട്ട', vipareetham: 'ചെറുകുട്ട', prayogam: 'കൊയ്തെടുത്ത നെൽവിത്തുകൾ ഉണക്കി കൊമ്മയിൽ നിറച്ചുവെച്ചു.' },
+  { word: 'ചാക്രികത', meaning: 'ഒരു ചക്രംപോലെ ക്രമമായി ആവർത്തിക്കുന്ന പ്രകൃതിക്രമം (Cyclical Nature)', paryayam: 'ക്രമം, ആവർത്തനതത്ത്വം', vipareetham: 'ക്രമമില്ലായ്മ', prayogam: 'ഋതുക്കളുടെ ചാക്രികതയ്ക്കനുസരിച്ചാണ് കർഷകർ വിത്തുപാകുന്നത്.' },
+  { word: 'പ്രതിരോധശേഷി', meaning: 'കീടങ്ങളെയും രോഗങ്ങളെയും ചെറുത്തുനിൽക്കാനുള്ള സ്വാഭാവിക കരുത്ത്', paryayam: 'കരുത്ത്, രോഗപ്രതിരോധം', vipareetham: 'ദുർബ്ബലത', prayogam: 'മഞ്ഞും വെയിലും കൊണ്ട് ഉണക്കിയ നാടൻ വിത്തുകൾക്ക് മികച്ച പ്രതിരോധശേഷിയുണ്ട്.' },
+  { word: 'പൊടിഞാറ് / ചെളിഞാറ്', meaning: 'മഴ ലഭ്യതയ്ക്കനുസരിച്ച് പൊടിമണ്ണിലോ ചെളിയിലോ വിത്തുപാകി വളർത്തുന്ന ഞാറുകൾ', paryayam: 'ഞാറ്റടി', vipareetham: 'വിത്ത്', prayogam: 'മേടമാസത്തിൽ വയനാട്ടിൽ പൊടിഞാറും ചെളിഞാറും തയ്യാറാക്കുന്നു.' }
+];
+
+const QUIZ_DATA = [
+  { q: '‘വിത്തെന്ന മഹാദ്ഭുതം’ എന്ന പാഠഭാഗം ആരുടെ ആത്മകഥയിൽനിന്നുള്ളതാണ്?', opts: ['പത്മശ്രീ ചെറുവയൽ രാമൻ', 'എം.എസ്. സ്വാമിനാഥൻ', 'സുഭാഷ് പലേക്കർ', 'ഡോ. സി.ആർ. രാജഗോപാലൻ'], ans: 0 },
+  { q: 'വിത്ത് ശേഖരിക്കുമ്പോൾ ധാന്യമണികൾക്ക് എത്ര ശതമാനം മൂപ്പാണ് ഉണ്ടായിരിക്കേണ്ടത്?', opts: ['80 ശതമാനം', '100 ശതമാനം', '50 ശതമാനം', '60 ശതമാനം'], ans: 0 },
+  { q: 'നെൽക്കതിരിൽനിന്നും പയർവള്ളിയിൽനിന്നും വിത്തെടുക്കുമ്പോൾ ഒഴിവാക്കേണ്ട ഭാഗങ്ങൾ ഏവ?', opts: ['രണ്ടറ്റങ്ങളും (നടുവിലെ മണികൾ മാത്രം എടുക്കണം)', 'നടുവിലെ ഭാഗം', 'മുകൾഭാഗം മാത്രം', 'അടിഭാഗം മാത്രം'], ans: 0 },
+  { q: 'വിത്തുകൾ എത്ര ദിവസം വെയിലത്തും മഞ്ഞത്തുമിട്ട് ഉണക്കിയെടുക്കണം എന്നാണ് പറയുന്നത്?', opts: ['14 ദിവസം', '7 ദിവസം', '21 ദിവസം', '30 ദിവസം'], ans: 0 },
+  { q: 'കച്ചികൊണ്ട് പന്തിന്റെയോ ഭൂഗോളത്തിന്റെയോ ആകൃതിയിൽ മെടഞ്ഞുണ്ടാക്കുന്ന വിത്തുപാത്രം ഏത്?', opts: ['വിത്തുമുട', 'കൊമ്മ', 'കുട്ട', 'പത്തായം'], ans: 0 },
+  { q: 'ഇഞ്ചി സൂക്ഷിക്കുന്നതിന് മുൻപ് എവിടെവെച്ചാണ് ഉണക്കിയെടുക്കുന്നത്?', opts: ['പുകയത്തുവെച്ച്', 'വെള്ളത്തിൽ മുക്കി', 'ഫ്രിഡ്ജിൽ വെച്ച്', 'ചെളിയിലിട്ട്'], ans: 0 },
+  { q: '6 മാസം (180 ദിവസം) മൂപ്പുള്ള വിത്താണെങ്കിൽ എത്ര ദിവസത്തിനുള്ളിൽ ഞാറ് പറിച്ചുനടണം?', opts: ['42 ദിവസത്തിനുള്ളിൽ (6 x 7 = 42)', '28 ദിവസം', '50 ദിവസം', '60 ദിവസം'], ans: 0 },
+  { q: '4 മാസം മൂപ്പുള്ള വിത്താണെങ്കിൽ എത്ര ദിവസത്തിനുള്ളിൽ പറിച്ചുനടണം?', opts: ['28 ദിവസത്തിനുള്ളിൽ (4 x 7 = 28)', '42 ദിവസം', '35 ദിവസം', '20 ദിവസം'], ans: 0 },
+  { q: '“അധികം വിളഞ്ഞാൽ വിത്തിന് കൊള്ളില്ല” - എന്നത് ഏതു വിഭാഗത്തിൽപ്പെടുന്നു?', opts: ['കാർഷിക പഴഞ്ചൊല്ല്', 'കവിത', 'ശൈലി', 'കടങ്കഥ'], ans: 0 },
+  { q: 'ചെറുവയൽ രാമന് രാജ്യം നൽകി ആദരിച്ച പരമോന്നത പുരസ്കാരം ഏതാണ്?', opts: ['പത്മശ്രീ (2023)', 'പത്മഭൂഷൺ', 'ഭാരതരത്ന', 'കൃഷിശിരോമണി'], ans: 0 },
+  { q: 'വിത്തുസൂക്ഷിപ്പിന് മുളയും ഈറ്റയും കൊണ്ടുണ്ടാക്കുന്ന പാത്രങ്ങൾ ഏവ?', opts: ['കൊമ്മ, കുട്ട', 'പ്ലാസ്റ്റിക് പാത്രം', 'ഇരുമ്പുപെട്ടി', 'ചാക്ക്'], ans: 0 },
+  { q: 'ഇന്ന് കാർഷികരംഗം നേരിടുന്ന ഏറ്റവും വലിയ വെല്ലുവിളിയായി ചെറുവയൽ രാമൻ കാണുന്നത് എന്തിനെയാണ്?', opts: ['കർഷകർ തമ്മിലുള്ള പരമ്പരാഗത ആശയവിനിമയം നഷ്ടപ്പെടുന്നത്', 'മഴ കൂടുന്നത്', 'വിത്ത് ഇല്ലാത്തത്', 'ട്രാക്ടർ ഇല്ലാത്തത്'], ans: 0 }
+];
+
+const G1_DATA = [
+  { q: '‘വിത്തുമുട’ നിർമ്മിക്കാൻ ഉപയോഗിക്കുന്ന പ്രധാന വസ്തു:', opts: ['നെല്ലിന്റെ കച്ചി (വൈക്കോൽ)', 'പ്ലാസ്റ്റിക്', 'ഇരുമ്പ്', 'തടി'], ans: 0 },
+  { q: '‘കൊമ്മ’ എന്ന കാർഷിക ഉപകരണത്തിന്റെ ഉപയോഗം:', opts: ['വിത്തുധാന്യങ്ങൾ കേടുകൂടാതെ സൂക്ഷിക്കാൻ', 'കള പറിക്കാൻ', 'വെള്ളം കോരാൻ', 'നിലം ഉഴുവാൻ'], ans: 0 },
+  { q: 'വിത്തിന് 80% മൂപ്പ് തിരഞ്ഞെടുക്കാൻ കാരണം:', opts: ['നൂറുശതമാനം മൂത്തായാൽ വിത്തിന്റെ ഗുണവും പ്രതിരോധശേഷിയും കുറയുമെന്നതിനാൽ', 'വേഗത്തിൽ മുളക്കാൻ', 'ഭാരം കുറയാൻ', 'നിറം കിട്ടാൻ'], ans: 0 },
+  { q: 'വയനാട്ടിലെ രണ്ട് പ്രധാന ഞാറ്റടി രീതികൾ:', opts: ['പൊടിഞാറ്, ചെളിഞാറ്', 'മഴഞാറ്, കാറ്റുഞാറ്', 'വെള്ളഞാറ്, തരിഞാറ്', 'വേനൽഞാറ്, മഞ്ഞുഞാറ്'], ans: 0 }
+];
+
+const G2_PAIRS = [
+  { id: '1', left: 'എണ്ണിത്തിട്ടപ്പെടുത്തി', right: 'എണ്ണി + തിട്ടപ്പെടുത്തി' },
+  { id: '2', left: 'കൃത്യമായിരുന്നില്ല', right: 'കൃത്യം + ആയിരുന്നില്ല' },
+  { id: '3', left: 'സമയമാകുമ്പോൾ', right: 'സമയം + ആകുമ്പോൾ' },
+  { id: '4', left: 'വിത്തെന്ന', right: 'വിത്ത് + എന്ന' }
+];
+
+const G3_DATA = [
+  { q: '‘അധികം വിളഞ്ഞാൽ വിത്തിന് കൊള്ളില്ല’ എന്ന പഴമൊഴിയുടെ തത്ത്വം:', opts: ['വിളവെടുപ്പിന്റെ കൃത്യമായ പക്വതയും സമയനിഷ്ഠയും', 'വിത്ത് കളയണം', 'വിളവ് കുറയ്ക്കണം', 'കൃഷി ചെയ്യരുത്'], ans: 0 },
+  { q: '‘വിത്തുഗുണം പത്തുഗുണം’ എന്ന ചൊല്ല് വ്യക്തമാക്കുന്നത്:', opts: ['മികച്ച വിത്തിൽനിന്നേ ഗുണമേന്മയുള്ള വിളവുണ്ടാകൂ', 'പത്തു വിത്ത് നടണം', 'വിത്ത് വാങ്ങരുത്', 'പണം ലാഭിക്കണം'], ans: 0 },
+  { q: '‘ചാക്രികത’ എന്ന പദത്തിന്റെ പര്യായം ഏത്?', opts: ['ആവർത്തനക്രമം / വൃത്തഗതി', 'നേർരേഖ', 'വേഗത', 'നിശ്ചലത'], ans: 0 },
+  { q: '‘പരമ്പരാഗതം’ എന്ന പദത്തിന്റെ വിപരീതം ഏത്?', opts: ['ആധുനികം / നൂതനം', 'പഴയത്', 'തനത്', 'നാടൻ'], ans: 0 }
+];
+
+const G4_DATA = [
+  { q: 'അന്വയക്രമം ശരിയാക്കുക:<br><i>"വിത്തുപാകുന്നത് / സമയത്താണ് / രണ്ടു / വയനാട്ടിൽ"</i>',
+    opts: [
+      'വയനാട്ടിൽ രണ്ടു സമയത്താണ് വിത്തുപാകുന്നത്.',
+      'രണ്ടു സമയത്താണ് വയനാട്ടിൽ വിത്തുപാകുന്നത്.',
+      'വിത്തുപാകുന്നത് വയനാട്ടിൽ രണ്ടു സമയത്താണ്.',
+      'സമയത്താണ് രണ്ടു വിത്തുപാകുന്നത് വയനാട്ടിൽ.'
+    ], ans: 0 }
+];
+
+const G5_DATA = [
+  { q: 'പരമ്പരാഗത വിത്തുകളെ കീടനാശിനിയിൽ മുക്കാതെ സംരക്ഷിക്കാൻ കർഷകർ ചെയ്യുന്നത്:', opts: ['14 ദിവസം വെയിലും മഞ്ഞും കൊള്ളിച്ച് ഉണക്കിയെടുക്കുന്നു', 'വെള്ളത്തിൽ താഴ്ത്തുന്നു', 'മണ്ണിൽ കുഴിച്ചുമൂടുന്നു', 'ഉപ്പിലിടുന്നു'], ans: 0 },
+  { q: '“ഞാറുനടുന്നതിൽ ഒരു കണക്കും ക്രമവും ഉണ്ടാക്കുന്നതിൽ വിദ്യാഭ്യാസം വലിയ പങ്കുവഹിച്ചു” - കാരണം:', opts: ['മൂപ്പിന്റെ ദിവസങ്ങൾ കൃത്യമായി തിട്ടപ്പെടുത്തി നടാൻ കർഷകൻ പഠിച്ചതിനാൽ', 'പുസ്തകം വായിച്ചതുകൊണ്ട്', 'ഇംഗ്ലീഷ് പഠിച്ചതുകൊണ്ട്', 'പരീക്ഷ എഴുതിയതുകൊണ്ട്'], ans: 0 }
+];
+
+const G6_DATA = [
+  { q: '6 മാസം മൂപ്പുള്ള വിത്തിന് 42 ദിവസം കണക്കാക്കുന്ന ഗണിത സൂത്രവാക്യം:', opts: ['മാസങ്ങളുടെ എണ്ണത്തെ 7 കൊണ്ട് ഗുണിക്കുന്നു (6 x 7 = 42)', '6 നെ 5 കൊണ്ട് ഗുണിക്കുന്നു', '6 നെ 10 കൊണ്ട് ഗുണിക്കുന്നു', 'കൂട്ടുന്നു'], ans: 0 },
+  { q: 'പത്മശ്രീ ചെറുവയൽ രാമന്റെ പ്രധാന ജീവിത ദൗത്യം:', opts: ['നാടൻ നെൽവിത്തിനങ്ങളുടെ സംരക്ഷണവും ജൈവകൃഷി പ്രചാരണവും', 'വലിയ കമ്പനി നടത്തൽ', 'വിദേശത്ത് പോകൽ', 'യന്ത്രങ്ങൾ ഉണ്ടാക്കൽ'], ans: 0 }
+];
+
+function showScreen(id) {
+  playSound('click');
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  
+  if (id === 'readingScreen') renderStory();
+  if (id === 'vocabMatrixScreen') renderVocabMatrix();
+  if (id === 'activitiesScreen') renderActivities();
+  if (id === 'quizScreen') renderQuiz();
+  if (id === 'modelQPScreen') renderModelQP();
+  if (id === 'discourseScreen') renderDiscourses();
+  if (id === 'grammarScreen') renderGrammar();
+  if (id === 'authorScreen') renderAuthor();
+}
+
+function playSinglePara(idx) { speakMalayalam(STORY_PARAS[idx]); }
+
+function renderStory() {
+  const container = document.getElementById('storyContainer');
+  container.innerHTML = '';
+  STORY_PARAS.forEach((text, idx) => {
+    const div = document.createElement('div');
+    div.className = 'story-para';
+    div.innerHTML = `
+      <p class="ml">${text}</p>
+      <button class="mini-play" onclick="playSinglePara(${idx})">🔊</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+let isReadingStory = false;
+function readAllStory() {
+  if (isReadingStory) {
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    isReadingStory = false;
+    return;
+  }
+  isReadingStory = true;
+  let cur = 0;
+  function next() {
+    if (cur >= STORY_PARAS.length || !isReadingStory) {
+      isReadingStory = false;
+      return;
+    }
+    speakMalayalam(STORY_PARAS[cur], () => {
+      cur++;
+      next();
+    });
+  }
+  next();
+}
+
+function renderVocabMatrix() {
+  const grid = document.getElementById('vocabMatrixGrid');
+  grid.innerHTML = '';
+  VOCAB_MATRIX.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'vocab-card';
+    card.innerHTML = `
+      <div class="vocab-word ml">
+        <span>${item.word}</span>
+        <button class="icon-btn" style="width:34px; height:34px; font-size:0.95rem;" onclick="speakMalayalam('${item.word}. ${item.meaning}')">🔊</button>
+      </div>
+      <div class="vocab-row ml"><b>അർത്ഥം:</b> ${item.meaning}</div>
+      <div class="vocab-row ml"><b>പര്യായങ്ങൾ:</b> ${item.paryayam}</div>
+      <div class="vocab-row ml"><b>വിപരീതം:</b> ${item.vipareetham}</div>
+      <div class="vocab-row ml" style="background:#E8F5E9; padding:8px; border-radius:8px; margin-top:8px;"><b>പ്രയോഗം:</b> <i>"${item.prayogam}"</i></div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function renderActivities() {
+  const container = document.getElementById('activitiesContainer');
+  container.innerHTML = `
+    <div class="activity-block">
+      <div class="activity-heading ml">1. കാർഷിക ശാസ്ത്രീയതയും വിശകലനവും</div>
+      <div class="activity-desc ml"><b>ചോദ്യം:</b> “കർഷകരുടെ നീണ്ടകാലത്തെ പരിശ്രമങ്ങളും അനുഭവങ്ങളുമാണ് നമ്മുടെ നാടിന്റെ വിശപ്പകറ്റാൻ സഹായിക്കുന്നത്” - പാഠഭാഗം വിശകലനം ചെയ്ത് കുറിപ്പ് തയ്യാറാക്കുക.</div>
+      <button class="reveal-model-btn ml" onclick="revealModel('actAns1', this)">💡 വിശകലന സൂചിക</button>
+      <div class="model-answer-box ml" id="actAns1">
+        <b>വിശകലന സൂചിക:</b><br>
+        1. <b>അനുഭവത്തിന്റെ ശാസ്ത്രീയത:</b> ലാബുകളിലെ ഗവേഷണത്തേക്കാൾ കൃഷിഭൂമിയിലെ തലമുറകളുടെ നിരീക്ഷണങ്ങളാണ് വിത്തു സൂക്ഷിപ്പിലും വിളവെടുപ്പിലും കൃത്യത കൊണ്ടുവന്നത്.<br>
+        2. <b>വിത്തു സംരക്ഷണം:</b> കീടനാശിനികൾ ഇല്ലാതെ പ്രകൃതിയുടെ വെയിലും മഞ്ഞും കൊണ്ട് വിത്തിനെ പ്രതിരോധശേഷിയുള്ളതാക്കുന്ന നാടൻ അറിവുകൾ.<br>
+        3. <b>കണക്കും ക്രമവും:</b> വിത്തിടുന്ന തീയതിയും ഞാറുനടീൽ കാലവും തമ്മിലുള്ള ഗണിതപരമായ ചേർച്ച വിളവു വർദ്ധിപ്പിക്കാൻ സഹായിച്ചു.
+      </div>
+    </div>
+  `;
+}
+
+function renderGrammar() {
+  const c = document.getElementById('grammarContainer');
+  c.innerHTML = `
+    <div class="activity-block">
+      <div class="activity-heading ml">പദച്ചേരുവകൾ കണ്ടെത്താം (സന്ധികൾ - Word Joining)</div>
+      <div class="activity-desc ml">
+        • <b>എണ്ണിത്തിട്ടപ്പെടുത്തി</b> = എണ്ണി + തിട്ടപ്പെടുത്തി (ദ്വിത്വസന്ധി - 'ത' ഇരട്ടിച്ചു)<br>
+        • <b>കൃത്യമായിരുന്നില്ല</b> = കൃത്യം + ആയിരുന്നില്ല (ആഗമസന്ധി - 'യ്' വന്നു)<br>
+        • <b>സമയമാകുമ്പോൾ</b> = സമയം + ആകുമ്പോൾ (ലോപസന്ധി / ആദേശം)<br>
+        • <b>വിത്തെന്ന</b> = വിത്ത് + എന്ന<br><br>
+        <b>സവിശേഷത:</b> പദങ്ങൾ ചേരുമ്പോൾ അക്ഷരങ്ങൾ ഇരട്ടിക്കുകയോ, പുതിയ അക്ഷരം വരികയോ, അക്ഷരങ്ങൾ ലോപിക്കുകയോ ചെയ്യുന്നു.
+      </div>
+    </div>
+  `;
+}
+
+function renderDiscourses() {
+  const c = document.getElementById('discourseContainer');
+  c.innerHTML = `
+    <div class="activity-block">
+      <div class="activity-heading ml">1. പ്രസംഗ രൂപരേഖ: 'കൃഷിയുടെ പ്രാധാന്യം ഇന്നത്തെ സമൂഹത്തിൽ'</div>
+      <div class="activity-desc ml">സ്കൂൾ അസംബ്ലിയിൽ അവതരിപ്പിക്കാൻ 'കൃഷിയും ഭക്ഷ്യസുരക്ഷയും' എന്ന വിഷയത്തിൽ പ്രസംഗം തയ്യാറാക്കുക.</div>
+      <button class="reveal-model-btn ml" onclick="revealModel('disc1', this)">💡 മാതൃകാ പ്രസംഗം</button>
+      <div class="model-answer-box ml" id="disc1">
+        <p>ബഹുമാനപ്പെട്ട അധ്യാപകരെ, എന്റെ പ്രിയ കൂട്ടുകാരെ,</p>
+        <p style="margin:8px 0;">"ഒരു വിത്ത് മണ്ണിൽ മുളയ്ക്കുന്നത് ഒരു ജനതയുടെ ജീവന്റെ നിലനിൽപ്പാണ്" എന്ന് ചെറുവയൽ രാമന്റെ ജീവിതം നമ്മെ പഠിപ്പിക്കുന്നു. ഇന്ന് അന്യസംസ്ഥാനങ്ങളിൽനിന്നു വരുന്ന വിഷലിപ്തമായ പച്ചക്കറികളെയും ഹൈബ്രിഡ് വിത്തുകളെയും ആശ്രയിക്കുമ്പോൾ നമ്മുടെ നാടൻ വിത്തിനങ്ങളും മണ്ണിന്റെ ഫലഭൂയിഷ്ഠതയും നഷ്ടപ്പെടുന്നു. കൃഷി വെറുമൊരു തൊഴിലല്ല, മറിച്ച് നമ്മുടെ സംസ്കാരവും അതിജീവനവുമാണ്. സ്വന്തം വീട്ടുമുറ്റത്തും സ്കൂളിലും വിഷരഹിത പച്ചക്കറികൾ നട്ടുപിടിപ്പിക്കാൻ നാം മുന്നിട്ടിറങ്ങണം. വിത്തുകളെയും മണ്ണിനെയും സ്നേഹിക്കുന്ന ഒരു നല്ല നാളേക്കായി നമുക്ക് കൈകോർക്കാം. നന്ദി, നമസ്കാരം.</p>
+      </div>
+    </div>
+
+    <div class="activity-block">
+      <div class="activity-heading ml">2. അഭിമുഖ ചോദ്യാവലി (Farmer Interview Questionnaire)</div>
+      <div class="activity-desc ml">നാട്ടിലെ ഒരു മുതിർന്ന പരമ്പരാഗത കർഷകനുമായി അഭിമുഖം നടത്തുന്നതിനുള്ള 5 പ്രധാന ചോദ്യങ്ങൾ തയ്യാറാക്കുക.</div>
+      <button class="reveal-model-btn ml" onclick="revealModel('disc2', this)">💡 മാതൃകാ ചോദ്യാവലി</button>
+      <div class="model-answer-box ml" id="disc2">
+        1. എത്ര വർഷമായി അങ്ങ് പരമ്പരാഗത കൃഷിരീതികൾ പിന്തുടരുന്നു?<br>
+        2. പഴയകാലത്ത് നാട്ടിൽ കൃഷിചെയ്തിരുന്ന പ്രധാന നെൽവിത്തിനങ്ങളുടെ പ്രത്യേകതകൾ എന്തെല്ലാമായിരുന്നു?<br>
+        3. കീടനാശിനികൾ ഇല്ലാതെ പരമ്പരാഗതമായി വിത്തുകൾ കേടുകൂടാതെ സൂക്ഷിച്ചിരുന്നത് എങ്ങനെയാണ്?<br>
+        4. കാലാവസ്ഥാ വ്യതിയാനങ്ങൾ ഇന്നത്തെ കൃഷിയെ എങ്ങനെയാണ് ബാധിക്കുന്നത്?<br>
+        5. പുതിയ തലമുറയിലെ കുട്ടികൾക്ക് കാർഷിക രംഗത്തേക്ക് കടന്നുവരാൻ അങ്ങേയ്ക്ക് നൽകാനുള്ള സന്ദേശം എന്താണ്?
+      </div>
+    </div>
+  `;
+}
+
+function renderAuthor() {
+  const c = document.getElementById('authorContainer');
+  c.innerHTML = `
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:18px; flex-wrap:wrap;">
+      <div style="font-size:4rem; background:#E8F5E9; border-radius:50%; width:90px; height:90px; display:flex; align-items:center; justify-content:center; border:3px solid #81C784;">🌾</div>
+      <div>
+        <h2 class="ml" style="color:var(--primary); font-size:1.6rem;">പത്മശ്രീ ചെറുവയൽ രാമൻ (Cheruvayal Raman)</h2>
+        <div class="ml" style="font-size:1.05rem; color:#E65100; font-weight:700;">വയനാടിന്റെ ജീവിക്കുന്ന വിത്തുബാങ്ക് · പാരമ്പര്യ നെൽവിത്തു സംരക്ഷകൻ</div>
+      </div>
+    </div>
+    <table class="custom-table ml">
+      <tr><th>ജന്മദേശം</th><td>വയനാട് ജില്ലയിലെ മാനന്തവാടി, കമ്മന ഗ്രാമം (കുറിച്ച്യ സമുദായം)</td></tr>
+      <tr><th>പ്രവർത്തനം</th><td>നൂറ്റിയമ്പതിലധികം അപൂർവ്വ പരമ്പരാഗത നെൽവിത്തിനങ്ങളുടെ സംരക്ഷണവും സൗജന്യ വിതരണവും.</td></tr>
+      <tr><th>സവിശേഷത</th><td>ലാഭേച്ഛയില്ലാതെ, വിത്ത് വാങ്ങി കൃഷിചെയ്ത് ഇരട്ടിയായി തിരിച്ചുനൽകണമെന്ന ഒറ്റ നിബന്ധനയിൽ കർഷകർക്ക് നാടൻ വിത്തുകൾ കൈമാറുന്നു.</td></tr>
+      <tr><th>ബഹുമതികൾ</th><td>പത്മശ്രീ പുരസ്കാരം (2023), കേന്ദ്ര സസ്യ ഇന സംരക്ഷണ അതോറിറ്റി അവാർഡ്, ദേശീയ ജൈവവൈവിധ്യ പുരസ്കാരം.</td></tr>
+    </table>
+  `;
+}
+
+function renderModelQP() {
+  const c = document.getElementById('modelQPContent');
+  c.innerHTML = `
+    <div class="qp-title ml">FIRST TERMINAL EVALUATION (MODEL QUESTION PAPER)</div>
+    <div class="qp-meta ml"><b>സ്റ്റാൻഡേർഡ് 7 · മലയാളം (അടിസ്ഥാനപാഠാവലി) · യൂണിറ്റ് 1 (പാഠം 3: വിത്തെന്ന മഹാദ്ഭുതം)</b><br>Max. Marks: 30 &nbsp;|&nbsp; Time: 45 Minutes &nbsp;|&nbsp; തയ്യാറാക്കിയത്: Smart Vidhya</div>
+
+    <div class="qp-section-title ml">I. ശരിയായ ഉത്തരം തെരഞ്ഞെടുത്തെഴുതുക (Choose the correct answer) [4 x 1 = 4]</div>
+    <div class="qp-q-box ml"><b>1.</b> 'വിത്തെന്ന മഹാദ്ഭുതം' എന്ന പാഠഭാഗം ആരുടെ ആത്മകഥയിലെ ഭാഗമാണ്?<br>(A) ചെറുവയൽ രാമൻ &nbsp; (B) എം.എസ്. സ്വാമിനാഥൻ &nbsp; (C) സുഗതകുമാരി &nbsp; (D) രാജഗോപാലൻ</div>
+    <div class="qp-q-box ml"><b>2.</b> വിത്തിനായി ധാന്യമണികൾ എടുക്കുമ്പോൾ എത്ര ശതമാനം മൂപ്പാണ് വേണ്ടത്?<br>(A) 80 ശതമാനം &nbsp; (B) 100 ശതമാനം &nbsp; (C) 50 ശതമാനം &nbsp; (D) 90 ശതമാനം</div>
+    <div class="qp-q-box ml"><b>3.</b> കച്ചികൊണ്ട് പന്തിന്റെ ആകൃതിയിൽ മെടഞ്ഞുണ്ടാക്കുന്ന വിത്തുപാത്രം ഏത്?<br>(A) വിത്തുമുട &nbsp; (B) കൊമ്മ &nbsp; (C) കുട്ട &nbsp; (D) പത്തായം</div>
+    <div class="qp-q-box ml"><b>4.</b> 6 മാസം മൂപ്പുള്ള വിത്തിന് ഞാറു നടേണ്ട ദിവസമെത്ര?<br>(A) 42 ദിവസം &nbsp; (B) 28 ദിവസം &nbsp; (C) 30 ദിവസം &nbsp; (D) 50 ദിവസം</div>
+
+    <div class="qp-section-title ml">II. ശരിയോ തെറ്റോ എന്ന് രേഖപ്പെടുത്തുക (True or False) [3 x 1 = 3]</div>
+    <div class="qp-q-box ml"><b>5.</b> പരമ്പരാഗത വിത്തുകൾ 14 ദിവസം വെയിലിലും മഞ്ഞിലും ഇട്ട് ഉണക്കിയെടുക്കുന്നു. ( )</div>
+    <div class="qp-q-box ml"><b>6.</b> കതിരിന്റെ അഗ്രഭാഗങ്ങളിലെ മണികളാണ് വിത്തിനായി എടുക്കേണ്ടത്. ( )</div>
+    <div class="qp-q-box ml"><b>7.</b> ചെറുവയൽ രാമന് 2023-ൽ പത്മശ്രീ പുരസ്കാരം ലഭിച്ചു. ( )</div>
+
+    <div class="qp-section-title ml">III. വിട്ടുപോയ ഭാഗം പൂരിപ്പിക്കുക (Fill in the blanks) [3 x 1 = 3]</div>
+    <div class="qp-q-box ml"><b>8.</b> 'അധികം വിളഞ്ഞാൽ ............ കൊള്ളില്ല' എന്നൊരു പഴമൊഴിയുണ്ട്.</div>
+    <div class="qp-q-box ml"><b>9.</b> ഇഞ്ചി സൂക്ഷിക്കുന്നതിനു മുൻപ് ............ വെച്ചാണ് ഉണക്കുന്നത്.</div>
+    <div class="qp-q-box ml"><b>10.</b> മേടമാസത്തിൽ ആദ്യമഴ പെയ്യുമ്പോഴാണ് ............ പാകിത്തുടങ്ങുന്നത്.</div>
+
+    <div class="qp-section-title ml">IV. ലഘു ഉത്തരമെഴുതുക (Short Answer) [3 x 2 = 6]</div>
+    <div class="qp-q-box ml"><b>11.</b> വിത്തിനായി ധാന്യമണികൾ തിരഞ്ഞെടുക്കുമ്പോൾ ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ എന്തെല്ലാം?</div>
+    <div class="qp-q-box ml"><b>12.</b> പരമ്പരാഗത വിത്തുകൾ സ്വാഭാവിക പ്രതിരോധശേഷി നേടുന്നത് എങ്ങനെയാണ്?</div>
+    <div class="qp-q-box ml"><b>13.</b> “ഞാറുനടുന്നതിൽ കണക്കും ക്രമവും ഉണ്ടാക്കുന്നതിൽ വിദ്യാഭ്യാസം പങ്കുവഹിച്ചു” - വിശദമാക്കുക.</div>
+
+    <div class="qp-section-title ml">V. വ്യാകരണവും പദച്ചേരുവകളും (2 x 3 = 6]</div>
+    <div class="qp-q-box ml"><b>14.</b> പിരിച്ചെഴുതി സന്ധി മാറ്റം വ്യക്തമാക്കുക: (A) എണ്ണിത്തിട്ടപ്പെടുത്തി (B) സമയമാകുമ്പോൾ</div>
+    <div class="qp-q-box ml"><b>15.</b> പര്യായപദങ്ങൾ എഴുതുക: (A) ധാന്യം (B) ഭൂഗോളം (C) കൃഷി</div>
+
+    <div class="qp-section-title ml">VI. പ്രസംഗം / അഭിമുഖ ചോദ്യാവലി (1 x 8 = 8]</div>
+    <div class="qp-q-box ml"><b>16.</b> 'പരമ്പരാഗത വിത്തുസംരക്ഷണത്തിന്റെ പ്രാധാന്യം' എന്ന വിഷയത്തിൽ പ്രസംഗ രൂപരേഖ തയ്യാറാക്കുക. (അഥവാ) കർഷകനുമായി നടത്താനുള്ള 5 അഭിമുഖ ചോദ്യങ്ങൾ തയ്യാറാക്കുക.</div>
+
+    <button class="reveal-model-btn ml" style="width:100%; margin-top:14px;" onclick="revealModel('qpAnswerKey', this)">💡 Answer Key & Marking Scheme (ഉത്തരസൂചിക)</button>
+    <div class="model-answer-box ml" id="qpAnswerKey">
+      <b>മാതൃകാ ഉത്തരസൂചിക:</b><br>
+      1. (A) ചെറുവയൽ രാമൻ &nbsp;|&nbsp; 2. (A) 80 ശതമാനം &nbsp;|&nbsp; 3. (A) വിത്തുമുട &nbsp;|&nbsp; 4. (A) 42 ദിവസം<br>
+      5. ശരി &nbsp;|&nbsp; 6. തെറ്റ് &nbsp;|&nbsp; 7. ശരി<br>
+      8. വിത്തിന് &nbsp;|&nbsp; 9. പുകയത്ത് &nbsp;|&nbsp; 10. വിത്ത്<br>
+      11. കതിരിന്റെ രണ്ടറ്റവും ഒഴിവാക്കി മധ്യഭാഗത്തുനിന്നുള്ള ആരോഗ്യമുള്ള മണികൾ എടുക്കണം.<br>
+      12. 14 ദിവസം വെയിലും മഞ്ഞും കൊള്ളിച്ച് പ്രകൃതിയോട് ലയിപ്പിച്ചുണക്കുന്നതിലൂടെ.<br>
+      13. വിത്തിന്റെ മൂപ്പ് കണക്കാക്കി ഗുണനപ്പട്ടികയനുസരിച്ച് കൃത്യമായ ദിവസത്തിനുള്ളിൽ ഞാറുനട്ടു.<br>
+      14. എണ്ണി + തിട്ടപ്പെടുത്തി (ദ്വിത്വം), സമയം + ആകുമ്പോൾ (ലോപം/ആദേശം).<br>
+      15. ധാന്യം = നെല്ല്/വിത്ത്, ഭൂഗോളം = ഭൂമി/ഉലകം, കൃഷി = കാർഷികവൃത്തി.<br>
+      16. ആമുഖം, നാടൻ വിത്തുകളുടെ മഹത്വം, ജൈവസംരക്ഷണം, സന്ദേശം എന്നിവ പരിഗണിച്ച് മാർക്ക് നൽകുക.
+    </div>
+  `;
+}
+
+function printQuestionPaper() { window.print(); }
+
+function downloadTextQP() {
+  const textContent = `
+======================================================
+FIRST TERMINAL EVALUATION - STD 7 MALAYALAM (AT UNIT 1)
+പാഠം 3: വിത്തെന്ന മഹാദ്ഭുതം (ചെറുവയൽ രാമൻ)
+Max. Marks: 30 | Time: 45 Minutes | Prepared by Smart Vidhya
+======================================================
+
+I. ശരിയായ ഉത്തരം തെരഞ്ഞെടുത്തെഴുതുക (4 x 1 = 4)
+1. 'വിത്തെന്ന മഹാദ്ഭുതം' എന്ന പാഠഭാഗം ആരുടെ ആത്മകഥയിലെ ഭാഗമാണ്?
+   (A) ചെറുവയൽ രാമൻ  (B) സ്വാമിനാഥൻ  (C) സുഗതകുമാരി  (D) രാജഗോപാലൻ
+2. വിത്തിനായി ധാന്യമണികൾ എടുക്കുമ്പോൾ എത്ര ശതമാനം മൂപ്പാണ് വേണ്ടത്?
+   (A) 80 ശതമാനം  (B) 100 ശതമാനം  (C) 50 ശതമാനം  (D) 90 ശതമാനം
+3. കച്ചികൊണ്ട് പന്തിന്റെ ആകൃതിയിൽ മെടഞ്ഞുണ്ടാക്കുന്ന വിത്തുപാത്രം ഏത്?
+   (A) വിത്തുമുട  (B) കൊമ്മ  (C) കുട്ട  (D) പത്തായം
+4. 6 മാസം മൂപ്പുള്ള വിത്തിന് ഞാറു നടേണ്ട ദിവസമെത്ര?
+   (A) 42 ദിവസം  (B) 28 ദിവസം  (C) 30 ദിവസം  (D) 50 ദിവസം
+
+II. ശരിയോ തെറ്റോ എന്ന് രേഖപ്പെടുത്തുക (3 x 1 = 3)
+5. പരമ്പരാഗത വിത്തുകൾ 14 ദിവസം വെയിലിലും മഞ്ഞിലും ഇട്ട് ഉണക്കിയെടുക്കുന്നു. ( )
+6. കതിരിന്റെ അഗ്രഭാഗങ്ങളിലെ മണികളാണ് വിത്തിനായി എടുക്കേണ്ടത്. ( )
+7. ചെറുവയൽ രാമന് 2023-ൽ പത്മശ്രീ പുരസ്കാരം ലഭിച്ചു. ( )
+
+III. വിട്ടുപോയ ഭാഗം പൂരിപ്പിക്കുക (3 x 1 = 3)
+8. 'അധികം വിളഞ്ഞാൽ ............ കൊള്ളില്ല' എന്നൊരു പഴമൊഴിയുണ്ട്.
+9. ഇഞ്ചി സൂക്ഷിക്കുന്നതിനു മുൻപ് ............ വെച്ചാണ് ഉണക്കുന്നത്.
+10. മേടമാസത്തിൽ ആദ്യമഴ പെയ്യുമ്പോഴാണ് ............ പാകിത്തുടങ്ങുന്നത്.
+
+IV. ലഘു ഉത്തരമെഴുതുക (3 x 2 = 6)
+11. വിത്തിനായി ധാന്യമണികൾ തിരഞ്ഞെടുക്കുമ്പോൾ ശ്രദ്ധിക്കേണ്ട കാര്യങ്ങൾ എന്തെല്ലാം?
+12. പരമ്പരാഗത വിത്തുകൾ സ്വാഭാവിക പ്രതിരോധശേഷി നേടുന്നത് എങ്ങനെയാണ്?
+13. “ഞാറുനടുന്നതിൽ കണക്കും ക്രമവും ഉണ്ടാക്കുന്നതിൽ വിദ്യാഭ്യാസം പങ്കുവഹിച്ചു” - വിശദമാക്കുക.
+
+V. വ്യാകരണവും പദച്ചേരുവകളും (2 x 3 = 6)
+14. പിരിച്ചെഴുതുക: (A) എണ്ണിത്തിട്ടപ്പെടുത്തി (B) സമയമാകുമ്പോൾ
+15. പര്യായങ്ങൾ എഴുതുക: (A) ധാന്യം (B) ഭൂഗോളം (C) കൃഷി
+
+VI. പ്രസംഗം / അഭിമുഖം (1 x 8 = 8)
+16. 'പരമ്പരാഗത വിത്തുസംരക്ഷണത്തിന്റെ പ്രാധാന്യം' പ്രസംഗം (അഥവാ) കർഷക അഭിമുഖ ചോദ്യാവലി തയ്യാറാക്കുക.
+======================================================
+`;
+  const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'STD7_Malayalam_AT_Unit1_Lesson3_QuestionPaper.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+// Games Controller
+function launchGame(num) {
+  state.activeGame = num;
+  state.currentGameIndex = 0;
+  if (num === 1) state.gameQueue = [...G1_DATA];
+  else if (num === 3) state.gameQueue = [...G3_DATA];
+  else if (num === 4) state.gameQueue = [...G4_DATA];
+  else if (num === 5) state.gameQueue = [...G5_DATA];
+  else if (num === 6) state.gameQueue = [...G6_DATA];
+  renderCurrentGame();
+}
+
+function nextGameQuestion() {
+  state.currentGameIndex++;
+  if (state.currentGameIndex >= state.gameQueue.length) {
+    state.stars += 1; updateStatsUI(); showRewardModal();
+  } else {
+    renderCurrentGame();
+  }
+}
+
+function renderCurrentGame() {
+  if (state.activeGame === 1) renderGameGeneric('game1Screen', 'g1QuestionCard', 'g1OptionsGrid');
+  else if (state.activeGame === 2) renderGame2();
+  else if (state.activeGame === 3) renderGameGeneric('game3Screen', 'g3QuestionCard', 'g3OptionsGrid');
+  else if (state.activeGame === 4) renderGameGeneric('game4Screen', 'g4QuestionCard', 'g4OptionsGrid');
+  else if (state.activeGame === 5) renderGameGeneric('game5Screen', 'g5QuestionCard', 'g5OptionsGrid');
+  else if (state.activeGame === 6) renderGameGeneric('game6Screen', 'g6QuestionCard', 'g6OptionsGrid');
+}
+
+function renderGameGeneric(screenId, qCardId, gridId) {
+  showScreen(screenId);
+  const item = state.gameQueue[state.currentGameIndex];
+  document.getElementById(qCardId).innerHTML = item.q;
+  const grid = document.getElementById(gridId);
+  grid.innerHTML = '';
+  item.opts.forEach((opt, idx) => {
+    const b = document.createElement('button');
+    b.className = 'option-btn ml';
+    b.innerText = opt;
+    b.onclick = () => {
+      speakMalayalam(opt);
+      handleAcademicAnswer(idx === item.ans, b);
+    };
+    grid.appendChild(b);
+  });
+}
+
+function handleAcademicAnswer(isCorrect, btn) {
+  if (isCorrect) {
+    state.score += 10; playSound('correct'); if (btn) btn.classList.add('correct');
+    updateStatsUI(); setTimeout(nextGameQuestion, 900);
+  } else {
+    playSound('wrong'); if (btn) btn.classList.add('wrong');
+    state.lives--; updateStatsUI();
+    if (state.lives <= 0) {
+      setTimeout(() => { alert('ഗെയിം അവസാനിച്ചു! വീണ്ടും ശ്രമിക്കൂ.'); state.lives = 3; updateStatsUI(); showScreen('gamesMenuScreen'); }, 500);
+    }
+  }
+}
+
+let g2SelA = null, g2SelB = null, g2Matches = 0;
+function renderGame2() {
+  showScreen('game2Screen');
+  g2SelA = null; g2SelB = null; g2Matches = 0;
+  const colA = document.getElementById('g2ColA');
+  const colB = document.getElementById('g2ColB');
+  colA.innerHTML = ''; colB.innerHTML = '';
+
+  const shuffledPairs = [...G2_PAIRS].sort(() => Math.random() - 0.5);
+  const shuffledRights = [...G2_PAIRS].sort(() => Math.random() - 0.5);
+
+  shuffledPairs.forEach(p => {
+    const d = document.createElement('div');
+    d.className = 'match-item ml';
+    d.dataset.id = p.id;
+    d.innerText = p.left;
+    d.onclick = () => {
+      playSound('click');
+      document.querySelectorAll('#g2ColA .match-item').forEach(e => e.classList.remove('selected'));
+      d.classList.add('selected');
+      g2SelA = p.id; checkMatch2();
+    };
+    colA.appendChild(d);
+  });
+
+  shuffledRights.forEach(p => {
+    const d = document.createElement('div');
+    d.className = 'match-item ml';
+    d.dataset.id = p.id;
+    d.innerText = p.right;
+    d.onclick = () => {
+      speakMalayalam(p.right);
+      document.querySelectorAll('#g2ColB .match-item').forEach(e => e.classList.remove('selected'));
+      d.classList.add('selected');
+      g2SelB = p.id; checkMatch2();
+    };
+    colB.appendChild(d);
+  });
+}
+
+function checkMatch2() {
+  if (g2SelA && g2SelB) {
+    if (g2SelA === g2SelB) {
+      playSound('correct'); state.score += 15; g2Matches++;
+      const itemA = document.querySelector(`#g2ColA .match-item[data-id="${g2SelA}"]`);
+      const itemB = document.querySelector(`#g2ColB .match-item[data-id="${g2SelB}"]`);
+      if (itemA) itemA.classList.add('matched');
+      if (itemB) itemB.classList.add('matched');
+      g2SelA = null; g2SelB = null;
+      updateStatsUI();
+      if (g2Matches >= G2_PAIRS.length) {
+        state.stars += 1; updateStatsUI(); showRewardModal();
+      }
+    } else {
+      playSound('wrong'); state.lives--; updateStatsUI();
+      const itemA = document.querySelector('#g2ColA .selected');
+      const itemB = document.querySelector('#g2ColB .selected');
+      if (itemA) itemA.classList.add('wrong');
+      if (itemB) itemB.classList.add('wrong');
+      setTimeout(() => {
+        if (itemA) itemA.classList.remove('selected', 'wrong');
+        if (itemB) itemB.classList.remove('selected', 'wrong');
+        g2SelA = null; g2SelB = null;
+      }, 600);
+    }
+  }
+}
+
+// Quiz Controller
+function renderQuiz() {
+  state.quizSubmitted = false;
+  document.getElementById('quizScoreBox').style.display = 'none';
+  const c = document.getElementById('quizContainer');
+  c.innerHTML = '';
+  QUIZ_DATA.forEach((item, qi) => {
+    const qd = document.createElement('div');
+    qd.className = 'quiz-q';
+    qd.innerHTML = `
+      <div class="qtext ml">${qi + 1}. ${item.q}</div>
+      <div class="quiz-opts" id="qopts${qi}"></div>
+    `;
+    c.appendChild(qd);
+    const od = qd.querySelector('#qopts' + qi);
+    item.opts.forEach((opt, oi) => {
+      const b = document.createElement('div');
+      b.className = 'quiz-opt ml';
+      b.innerText = opt;
+      b.dataset.qi = qi; b.dataset.oi = oi;
+      b.onclick = () => {
+        if (state.quizSubmitted) return;
+        document.querySelectorAll(`#qopts${qi} .quiz-opt`).forEach(e => e.classList.remove('picked'));
+        b.classList.add('picked');
+        playSound('click');
+      };
+      od.appendChild(b);
+    });
+  });
+}
+
+function submitQuiz() {
+  if (state.quizSubmitted) return;
+  state.quizSubmitted = true;
+  let score = 0;
+  QUIZ_DATA.forEach((item, qi) => {
+    const opts = document.querySelectorAll(`#qopts${qi} .quiz-opt`);
+    const picked = document.querySelector(`#qopts${qi} .picked`);
+    if (picked && parseInt(picked.dataset.oi) === item.ans) score++;
+    opts.forEach(o => {
+      if (parseInt(o.dataset.oi) === item.ans) o.classList.add('correct-ans');
+      else if (o.classList.contains('picked')) o.classList.add('wrong-ans');
+    });
+  });
+  state.score += score * 10;
+  state.stars += (score >= 10 ? 2 : 1);
+  updateStatsUI();
+  const box = document.getElementById('quizScoreBox');
+  box.style.display = 'block';
+  box.innerHTML = `നിങ്ങളുടെ സ്കോർ: ${score} / ${QUIZ_DATA.length} ${score >= 10 ? '🌟 അതിവിശിഷ്ടം (Outstanding)!' : score >= 7 ? '👍 വളരെ നല്ലത് (Good)!' : 'തുടർപഠനം ആവശ്യമാണ്.'}`;
+  playSound(score >= 10 ? 'fanfare' : 'correct');
+}
+
+
+let appZoom = 1;
+function changeZoom(delta) {
+  appZoom = Math.min(1.6, Math.max(0.75, appZoom + delta));
+  const app = document.getElementById('app');
+  if (app) {
+    app.style.zoom = appZoom;
+    app.style.transform = 'scale(' + appZoom + ')';
+    app.style.transformOrigin = 'top center';
+  }
+  const lab = document.getElementById('zoomLabel');
+  if (lab) lab.textContent = Math.round(appZoom * 100) + '%';
+}
+
+window.onload = function() {
+  updateStatsUI();
+  if ('speechSynthesis' in window) window.speechSynthesis.getVoices();
+};
+</script>
+</body>
+</html>
